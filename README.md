@@ -19,3 +19,88 @@ If `GEMINI_API_KEY` is not set, the system falls back to a **Mock Generator** th
 ```bash
 git clone [https://github.com/Ravshan1965/pfor-startup.git](https://github.com/Ravshan1965/pfor-startup.git)
 cd pfor-startup
+2. Create virtual environment and install dependencies
+
+python -m venv venv
+# Windows:
+venv\Scripts\activate
+# macOS/Linux:
+source venv/bin/activate
+
+pip install -r requirements.txt
+3. Configure environment (optional)
+# Copy the example env file and add your Gemini API key
+cp .env.example .env
+# Edit .env and set GEMINI_API_KEY=your_key_here
+4. Run the backend
+cd src
+uvicorn pfor.main:app --reload --port 8000
+Method,Path,Description
+POST,/api/auth/register,Register a new user
+POST,/api/auth/login,Login and receive JWT token
+POST,/api/strategy/generate,Generate a strategic report
+GET,/api/strategy/reports,List reports for current user
+
+Variable,Required,Description
+GEMINI_API_KEY,No,Google Gemini API key. Falls back to mock if not set.
+SECRET_KEY,No,JWT signing secret (defaults to a random key)
+DATABASE_URL,No,SQLite URL (defaults to sqlite:///./pfor_local.db)
+Variable,Required,Description
+GEMINI_API_KEY,No,Google Gemini API key. Falls back to mock if not set.
+SECRET_KEY,No,JWT signing secret (defaults to a random key)
+DATABASE_URL,No,SQLite URL (defaults to sqlite:///./pfor_local.db)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
