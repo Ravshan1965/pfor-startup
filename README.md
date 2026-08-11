@@ -1,21 +1,21 @@
-## API Endpoints
+# PFOR: Operational Solutions Platform
 
-| Method | Path | Description |
-| :--- | :--- | :--- |
-| **POST** | `/api/auth/register` | Register a new user |
-| **POST** | `/api/auth/login` | Login and receive JWT token |
-| **POST** | `/api/strategy/generate` | Generate a strategic report |
-| **GET** | `/api/strategy/reports` | List reports for current user |
+## Multi-Agent Pipeline
 
-## Environment Variables
+A single **Google Gemini** model (`gemini-1.5-flash`) is used with four distinct role-based prompts executed sequentially:
 
-| Variable | Required | Description |
-| :--- | :--- | :--- |
-| **GEMINI_API_KEY** | No | Google Gemini API key. Falls back to mock if not set. |
-| **SECRET_KEY** | No | JWT signing secret (defaults to a random key) |
-| **DATABASE_URL** | No | SQLite URL (defaults to `sqlite:///./pfor_local.db`) |
+| Agent | Role |
+| :--- | :--- |
+| **Director** | Strategic goals and solution concept |
+| **Marketer** | Positioning, sales funnels, acquisition channels |
+| **Financier** | Unit economics, budget, financial risks |
+| **Editor** | Consolidates all outputs into a 5-page structured report |
 
-## Tech Stack
+If `GEMINI_API_KEY` is not set, the system falls back to a **Mock Generator** that produces a realistic sample report so the UI is always functional.
 
-* **Backend**: Python 3.11+, FastAPI, SQLAlchemy, Pydantic v2
-* **Database**: SQLite (via SQLAlchemy ORM)
+## Quick Start
+
+### 1. Clone the repository
+```bash
+git clone [https://github.com/Ravshan1965/pfor-startup.git](https://github.com/Ravshan1965/pfor-startup.git)
+cd pfor-startup
