@@ -12,3 +12,4 @@ httpx
 alembic
 email-validator
 pytest
+requests
